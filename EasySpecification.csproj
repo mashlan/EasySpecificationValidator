@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>EasySpecification</AssemblyName>
+    <RootNamespace>EasySpecification</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>Specification .NetStandard .NetCore RulesValidation</PackageTags>
+    <Description>Simple abstraction of Specfication pattern for .Net Standard</Description>
+    <Copyright>2018</Copyright>
+    <Authors>Eric Mashlan; Andre Davis</Authors>
+  </PropertyGroup>
+
+</Project>
