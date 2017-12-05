@@ -1,9 +1,8 @@
 using System;
-using System.Linq.Expressions;
 
 namespace EasySpecification.Specification
 {
-    public interface ISpecification<TEntity>
+    public interface ISpecification<in TEntity>
     {
         Func<bool> Rule { get; }
 

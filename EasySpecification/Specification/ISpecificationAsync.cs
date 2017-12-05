@@ -1,12 +1,10 @@
 using System;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace EasySpecification.Specification
 {
-    public interface ISpecificationAsync<TEntity>
+    public interface ISpecificationAsync<in TEntity>
     {
-
         Func<Task<bool>> Rule { get; }
 
         Task<bool> IsSatisfiedByAsync(TEntity entity);
