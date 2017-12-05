@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 
 namespace EasySpecification.Specification
 {
@@ -10,6 +11,8 @@ namespace EasySpecification.Specification
         }
 
         private ISpecification<TEntity> Wrapped { get; }
+
+        public Expression<Func<TEntity, bool>> Rule => null;
 
         public bool IsSatisfiedBy(TEntity candidate)
         {
