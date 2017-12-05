@@ -17,4 +17,9 @@
     <ProjectReference Include="..\EasySpecification\EasySpecification.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validator\" />
+    <Folder Include="Specification\" />
+  </ItemGroup>
+
 </Project>

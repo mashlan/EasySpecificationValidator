@@ -7,15 +7,15 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Specification .NetStandard .NetCore RulesValidation</PackageTags>
     <Description>Simple abstraction of Specfication pattern for .Net Standard</Description>
-    <Copyright>2018</Copyright>
-    <Authors>Eric Mashlan  Andre Davis</Authors>
+    <Copyright>2017</Copyright>
+    <Authors>Eric Mashlan,  Andre Davis</Authors>
     <PackageId>EasySpecificationValidator</PackageId>
     <Product>EasySpecificationValidator</Product>
     <PackageProjectUrl>https://github.com/mashlan/EasySpecificationValidator</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/mashlan/EasySpecificationValidator/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://ih1.redbubble.net/image.436067462.0019/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg</PackageIconUrl>
     <Company>Eric Mashlan Andre Davis</Company>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 </Project>

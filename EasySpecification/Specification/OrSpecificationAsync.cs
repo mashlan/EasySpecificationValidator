@@ -1,5 +1,4 @@
 using System;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace EasySpecification.Specification
@@ -7,20 +6,20 @@ namespace EasySpecification.Specification
     public class OrSpecificationAsync<TEntity> : ISpecificationAsync<TEntity>
     {
         /// <exception cref="ArgumentNullException">Condition.</exception>
-        public OrSpecificationAsync(ISpecificationAsync<TEntity> spec1, ISpecificationAsync<TEntity> spec2)
+        public OrSpecificationAsync(ISpecificationAsync<TEntity> left, ISpecificationAsync<TEntity> right)
         {
-            Spec1 = spec1 ?? throw new ArgumentNullException(nameof(spec1));
-            Spec2 = spec2 ?? throw new ArgumentNullException(nameof(spec2));
+            LeftSpecification = left ?? throw new ArgumentNullException(nameof(left));
+            RightSpecification = right ?? throw new ArgumentNullException(nameof(right));
         }
 
-        private ISpecificationAsync<TEntity> Spec1 { get; }
-        private ISpecificationAsync<TEntity> Spec2 { get; }
+        private ISpecificationAsync<TEntity> LeftSpecification { get; }
+        private ISpecificationAsync<TEntity> RightSpecification { get; }
 
-        public Func<Task<bool>> Rule => null;
+        public Func<TEntity, Task<bool>> Rule => null;
 
         public async Task<bool> IsSatisfiedByAsync(TEntity candidate)
         {
-            return await Spec1.IsSatisfiedByAsync(candidate) || await Spec2.IsSatisfiedByAsync(candidate);
+            return await LeftSpecification.IsSatisfiedByAsync(candidate) || await RightSpecification.IsSatisfiedByAsync(candidate);
         }
     }
 }

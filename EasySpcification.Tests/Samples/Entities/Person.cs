@@ -1,9 +1,9 @@
 using System;
 using EasySpecification.Validator;
 
-namespace EasySpcification.Tests.Entities
+namespace EasySpcification.Tests.Samples.Entities
 {
-    public class TestEntity : ICanValidate<TestEntity>
+    public class Person : ICanValidate<Person>
     {
         public int Age { get; set; }
 

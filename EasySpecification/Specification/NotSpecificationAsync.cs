@@ -1,23 +1,23 @@
 using System;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace EasySpecification.Specification
 {
     public class NotSpecificationAsync<TEntity> : ISpecificationAsync<TEntity>
     {
-        internal NotSpecificationAsync(ISpecificationAsync<TEntity> spec)
+        /// <exception cref="ArgumentNullException">Condition.</exception>
+        internal NotSpecificationAsync(ISpecificationAsync<TEntity> specification)
         {
-            Spec = spec ?? throw new ArgumentNullException(nameof(spec));
+            Specification = specification ?? throw new ArgumentNullException(nameof(specification));
         }
 
-        private ISpecificationAsync<TEntity> Spec { get; }
+        private ISpecificationAsync<TEntity> Specification { get; }
 
-        public Func<Task<bool>> Rule => null;
+        public Func<TEntity, Task<bool>> Rule => null;
 
         public async Task<bool> IsSatisfiedByAsync(TEntity candidate)
         {
-            return !(await Spec.IsSatisfiedByAsync(candidate));
+            return !(await Specification.IsSatisfiedByAsync(candidate));
         }
     }
 }
