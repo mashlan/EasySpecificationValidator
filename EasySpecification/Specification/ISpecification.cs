@@ -5,7 +5,7 @@ namespace EasySpecification.Specification
 {
     public interface ISpecification<TEntity>
     {
-        Expression<Func<TEntity, bool>> Rule { get; }
+        Func<bool> Rule { get; }
 
         bool IsSatisfiedBy(TEntity entity);
     }

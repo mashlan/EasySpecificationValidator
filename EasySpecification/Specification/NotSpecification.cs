@@ -12,7 +12,7 @@ namespace EasySpecification.Specification
 
         private ISpecification<TEntity> Wrapped { get; }
 
-        public Expression<Func<TEntity, bool>> Rule => null;
+        public Func<bool> Rule => null;
 
         public bool IsSatisfiedBy(TEntity candidate)
         {

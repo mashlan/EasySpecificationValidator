@@ -15,7 +15,7 @@ namespace EasySpecification.Specification
         private ISpecificationAsync<TEntity> Spec1 { get; }
         private ISpecificationAsync<TEntity> Spec2 { get; }
 
-        public Expression<Func<TEntity, bool>> Rule => null;
+        public Func<Task<bool>> Rule => null;
 
         public async Task<bool> IsSatisfiedByAsync(TEntity candidate)
         {

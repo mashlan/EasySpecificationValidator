@@ -13,7 +13,7 @@ namespace EasySpecification.Specification
 
         private ISpecificationAsync<TEntity> Spec { get; }
 
-        public Expression<Func<TEntity, bool>> Rule => null;
+        public Func<Task<bool>> Rule => null;
 
         public async Task<bool> IsSatisfiedByAsync(TEntity candidate)
         {
