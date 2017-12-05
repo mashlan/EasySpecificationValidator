@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpecification", "EasySpecification.csproj", "{A4C281D1-C4B4-4D17-9986-7355856FC484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpecification", "EasySpecification\EasySpecification.csproj", "{A4C281D1-C4B4-4D17-9986-7355856FC484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySpcification.Tests", "..\EasySpcification.Tests\EasySpcification.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySpcification.Tests", "EasySpcification.Tests\EasySpcification.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}"
 EndProject
