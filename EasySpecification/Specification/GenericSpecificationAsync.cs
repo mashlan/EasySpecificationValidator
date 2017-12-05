@@ -6,13 +6,13 @@ namespace EasySpecification.Specification
 {
     public abstract class GenericSpecificationAsync<TEntity> : ISpecificationAsync<TEntity>
     {
-        public Expression<Func<TEntity, bool>> Rule { get; }
+        public abstract Expression<Func<TEntity, bool>> Rule { get; }
 
         /// <inheritdoc />
-        public async Task<bool> IsSatisfiedByAsync(TEntity entity)
+        public virtual async Task<bool> IsSatisfiedByAsync(TEntity entity)
         {
             var compiled = Rule.Compile();
-            return compiled(entity);
+            return await Task.FromResult(compiled(entity));
         }
     }
 }
