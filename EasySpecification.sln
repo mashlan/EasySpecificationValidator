@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpecification", "EasySp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySpcification.Tests", "..\EasySpcification.Tests\EasySpcification.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9F2DD153-FF45-4BC1-9F7C-33F417FE3A84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4C281D1-C4B4-4D17-9986-7355856FC484} = {9F2DD153-FF45-4BC1-9F7C-33F417FE3A84}
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF} = {2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D144C740-219E-45D6-A69D-20E0205A965B}
