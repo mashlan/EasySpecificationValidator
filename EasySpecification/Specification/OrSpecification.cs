@@ -5,6 +5,7 @@ namespace EasySpecification.Specification
 {
     public class OrSpecification<TEntity> : ISpecification<TEntity>
     {
+        /// <exception cref="ArgumentNullException">Condition.</exception>
         public OrSpecification(ISpecification<TEntity> spec1, ISpecification<TEntity> spec2)
         {
             Spec1 = spec1 ?? throw new ArgumentNullException(nameof(spec1));

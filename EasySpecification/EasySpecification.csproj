@@ -9,6 +9,8 @@
     <Description>Simple abstraction of Specfication pattern for .Net Standard</Description>
     <Copyright>2018</Copyright>
     <Authors>Eric Mashlan; Andre Davis</Authors>
+    <PackageId>EasySpecificationValidator</PackageId>
+    <Product>EasySpecificationValidator</Product>
   </PropertyGroup>
 
 </Project>

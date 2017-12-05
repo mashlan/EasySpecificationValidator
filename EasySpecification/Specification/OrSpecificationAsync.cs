@@ -6,6 +6,7 @@ namespace EasySpecification.Specification
 {
     public class OrSpecificationAsync<TEntity> : ISpecificationAsync<TEntity>
     {
+        /// <exception cref="ArgumentNullException">Condition.</exception>
         public OrSpecificationAsync(ISpecificationAsync<TEntity> spec1, ISpecificationAsync<TEntity> spec2)
         {
             Spec1 = spec1 ?? throw new ArgumentNullException(nameof(spec1));

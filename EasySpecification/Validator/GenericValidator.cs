@@ -1,4 +1,5 @@
-﻿using EasySpecification.Specification;
+﻿using System;
+using EasySpecification.Specification;
 
 namespace EasySpecification.Validator
 {
@@ -6,6 +7,7 @@ namespace EasySpecification.Validator
     {
         public abstract GenericSpecification<TEntity> Specification { get; set; }
 
+        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         public virtual bool IsValid(TEntity entity)
         {
             return Specification.IsSatisfiedBy(entity);
