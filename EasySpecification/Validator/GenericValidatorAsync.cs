@@ -7,7 +7,7 @@ namespace EasySpecification.Validator
     {
         public abstract GenericSpecificationAsync<TEntity> Specification { get; set; }
 
-        public async Task<bool> IsValidAsync(TEntity entity)
+        public virtual async Task<bool> IsValidAsync(TEntity entity)
         {
             return await Specification.IsSatisfiedByAsync(entity);
         }
