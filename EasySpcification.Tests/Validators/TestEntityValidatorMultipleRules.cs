@@ -16,7 +16,7 @@ namespace EasySpcification.Tests.Validators
         public override bool IsValid(TestEntity entity)
         {
             var greaterThan25 = new FirstNameCannotBeGreaterThanTwentyFive();
-            return ExtensionMethods.Or(Specification, ExtensionMethods.Not(greaterThan25)).IsSatisfiedBy(entity);
+            return Specification.Or(greaterThan25.Not()).IsSatisfiedBy(entity);
         }
     }
 }
