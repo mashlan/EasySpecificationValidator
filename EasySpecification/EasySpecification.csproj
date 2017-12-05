@@ -11,6 +11,8 @@
     <Authors>Eric Mashlan; Andre Davis</Authors>
     <PackageId>EasySpecificationValidator</PackageId>
     <Product>EasySpecificationValidator</Product>
+    <PackageProjectUrl>https://github.com/mashlan/EasySpecificationValidator</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mashlan/EasySpecificationValidator/blob/master/LICENSE.md</PackageLicenseUrl>
   </PropertyGroup>
 
 </Project>
