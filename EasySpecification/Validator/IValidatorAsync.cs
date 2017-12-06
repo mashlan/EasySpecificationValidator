@@ -2,7 +2,7 @@
 
 namespace EasySpecification.Validator
 {
-    public interface IValidatorAsync<in TEntity> where TEntity : class
+    public interface IValidatorAsync<in TEntity>
     {
         Task<bool> IsValidAsync(TEntity entity);
     }
