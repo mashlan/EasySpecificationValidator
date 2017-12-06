@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpcificationValidator.Tests", "EasySpecificationValidator.Tests\EasySpcificationValidator.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpecificationValidator.Tests", "EasySpecificationValidator.Tests\EasySpecificationValidator.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}"
 EndProject

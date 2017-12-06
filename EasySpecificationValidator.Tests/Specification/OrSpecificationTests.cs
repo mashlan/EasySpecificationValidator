@@ -48,5 +48,59 @@ namespace EasySpcificationValidator.Tests.Specification
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
             }
         }
+
+        [TestClass]
+        public class MethodsTests : BaseTest<string>
+        {
+            [TestCleanup]
+            public void TestCleanup()
+            {
+                ClearFakes();
+            }
+
+            [TestMethod]
+            public void OrLeftAndRightSideAreTrue()
+            {
+                SetLeftAndRightExpressionsResults(true, true);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy("Magic");
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
+            }
+
+            [TestMethod]
+            public void OrLeftIsTrueOnly()
+            {
+                SetLeftAndRightExpressionsResults(true, false);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy("Zeplin");
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
+            }
+
+            [TestMethod]
+            public void OrRightIsTrueOnly()
+            {
+                SetLeftAndRightExpressionsResults(false, true);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy("Greens n' such.");
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
+            }
+
+            [TestMethod]
+            public void OrLeftAndRightSideAreFalse()
+            {
+                SetLeftAndRightExpressionsResults(false, false);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy("Deadpool");
+                isValid.Should().BeFalse();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
+            }
+        }
     }
 }

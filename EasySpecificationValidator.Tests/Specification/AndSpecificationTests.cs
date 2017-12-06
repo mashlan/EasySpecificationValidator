@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq.Expressions;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
+using EasySpcificationValidator.Tests.Samples.Entities;
 using EasySpecificationValidator.Specification;
 using FakeItEasy;
 using FluentAssertions;
@@ -46,6 +49,60 @@ namespace EasySpcificationValidator.Tests.Specification
 
                 ctor.ShouldThrow<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
+            }
+        }
+
+        [TestClass]
+        public class MethodsTests : BaseTest<Person>
+        {
+            [TestCleanup]
+            public void TestCleanup()
+            {
+                ClearFakes();
+            }
+
+            [TestMethod]
+            public void BothAndedSpecificationsAreTrue()
+            {
+                SetLeftAndRightExpressionsResults(true, true);
+
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
+            }
+
+            [TestMethod]
+            public void RightSpecificationIsFalse()
+            {
+                SetLeftAndRightExpressionsResults(true, false);
+
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                isValid.Should().BeFalse();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
+            }
+
+            [TestMethod]
+            public void LeftSpecificationIsFalse()
+            {
+                SetLeftAndRightExpressionsResults(false, true);
+
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                isValid.Should().BeFalse();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
+            }
+
+            [TestMethod]
+            public void BothAndedSpecificationAreFalse()
+            {
+                SetLeftAndRightExpressionsResults(false, false);
+
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                isValid.Should().BeFalse();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
             }
         }
     }
