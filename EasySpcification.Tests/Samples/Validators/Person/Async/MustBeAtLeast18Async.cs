@@ -1,5 +1,4 @@
-﻿using EasySpcification.Tests.Samples.Entities;
-using EasySpecification.Specification;
+﻿using EasySpecification.Specification;
 using System;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace EasySpcification.Tests.Samples.Validators.Person.Async
     {
         public override Func<Entities.Person, Task<bool>> Rule => person =>
         {
-            Task.Delay(2000); //Pretend async deplay.
+            Task.Delay(2000); //Pretend async delay.
             return Task.FromResult(person.Age >= 18);
         };
 
