@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpcificationValidator.Tests", "EasySpecificationValidator.Tests\EasySpcificationValidator.Tests.csproj", "{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9F2DD153-FF45-4BC1-9F7C-33F417FE3A84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59A65617-EE0E-4960-A225-5FB676925B6C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySpecificationValidator", "EasySpecificationValidator\EasySpecificationValidator.csproj", "{6CDEF99E-BF5F-4139-B81D-455AC8BD4949}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDEF99E-BF5F-4139-B81D-455AC8BD4949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDEF99E-BF5F-4139-B81D-455AC8BD4949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDEF99E-BF5F-4139-B81D-455AC8BD4949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDEF99E-BF5F-4139-B81D-455AC8BD4949}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F848ABA4-9BAE-4982-9F21-35E2460D0ACF} = {2DA67119-6EA8-4A8E-AA2E-25A1C0D757C5}
+		{6CDEF99E-BF5F-4139-B81D-455AC8BD4949} = {9F2DD153-FF45-4BC1-9F7C-33F417FE3A84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D144C740-219E-45D6-A69D-20E0205A965B}
+	EndGlobalSection
+EndGlobal
