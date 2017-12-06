@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EasySpcificationValidator.Tests.Specification
 {
-    public class NoSpecificationTests
+    public class NotSpecificationTests
     {
         [TestClass]
         public class MethodsTests : BaseTest<char>
