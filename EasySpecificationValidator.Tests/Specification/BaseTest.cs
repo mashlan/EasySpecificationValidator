@@ -1,9 +1,9 @@
-﻿using EasySpecificationValidator.Specification;
-using FakeItEasy;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+using EasySpecificationValidator.Specification;
+using FakeItEasy;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class BaseTest<TSpecificationEntity>
     {

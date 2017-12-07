@@ -1,11 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using EasySpecificationValidator.Specification;
+﻿using EasySpecificationValidator.Specification;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading.Tasks;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class AndSpecificationAsyncTests
     {
@@ -64,7 +64,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(true, true);
 
-                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync("Wolverine");
+                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync(A.Dummy<string>());
                 isValid.Should().BeTrue();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
@@ -75,7 +75,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(true, false);
 
-                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync("Jason Voorhees");
+                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync(A.Dummy<string>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
@@ -86,7 +86,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(false, true);
 
-                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync("Wade Wilson");
+                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync(A.Dummy<string>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
@@ -97,7 +97,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(false, false);
 
-                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync("Clark Kent");
+                var isValid = await LeftSpecificationAsync.AndAsync(RightSpecificationAsync).IsSatisfiedByAsync(A.Dummy<string>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);

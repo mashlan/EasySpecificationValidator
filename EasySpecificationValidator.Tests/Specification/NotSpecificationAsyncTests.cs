@@ -1,10 +1,10 @@
-﻿using EasySpecificationValidator.Specification;
+﻿using System.Threading.Tasks;
+using EasySpecificationValidator.Specification;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class NotSpecificationAsyncTests : BaseTestAsync<char>
     {

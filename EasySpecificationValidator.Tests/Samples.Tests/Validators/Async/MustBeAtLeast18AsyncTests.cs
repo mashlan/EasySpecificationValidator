@@ -5,7 +5,7 @@ using EasySpecificationValidator.Tests.Samples.Validators.Person.Async;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Samples.Tests.Validators.Async
+namespace EasySpecificationValidator.Tests.Samples.Tests.Validators.Async
 {
     public class MustBeAtLeast18AsyncTests
     {

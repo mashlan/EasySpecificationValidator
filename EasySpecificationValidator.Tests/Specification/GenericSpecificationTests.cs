@@ -3,7 +3,7 @@ using EasySpecificationValidator.Specification;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class GenericSpecificationTests
     {

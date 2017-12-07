@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Linq.Expressions;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Tests.Samples.Entities;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class AndSpecificationTests
     {
@@ -66,7 +64,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(true, true);
 
-                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(A.Dummy<Person>());
                 isValid.Should().BeTrue();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
@@ -77,7 +75,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(true, false);
 
-                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(A.Dummy<Person>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
@@ -88,7 +86,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(false, true);
 
-                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(A.Dummy<Person>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
@@ -99,7 +97,7 @@ namespace EasySpcificationValidator.Tests.Specification
             {
                 SetLeftAndRightExpressionsResults(false, false);
 
-                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(new Person());
+                var isValid = LeftSpecification.And(RightSpecification).IsSatisfiedBy(A.Dummy<Person>());
                 isValid.Should().BeFalse();
 
                 CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);

@@ -1,10 +1,10 @@
-﻿using EasySpecificationValidator.Specification;
-using FakeItEasy;
-using System;
+﻿using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using EasySpecificationValidator.Specification;
+using FakeItEasy;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class BaseTestAsync<TSpecificationEntity>
     {
