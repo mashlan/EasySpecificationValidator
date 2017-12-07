@@ -7,7 +7,7 @@ namespace EasySpecificationValidator.Tests.Samples.Validators.Person
     {
         #region Overrides of GenericSpecification<Person>
 
-        public override Func<Entities.Person, bool> Rule => person => !(person.FirstName.Length > 25);
+        public override Func<Entities.Person, bool> Rule => person => person.FirstName.Length <= 25;
 
         #endregion
     }

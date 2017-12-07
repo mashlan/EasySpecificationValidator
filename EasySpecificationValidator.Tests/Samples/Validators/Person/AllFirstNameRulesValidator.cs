@@ -4,16 +4,16 @@ using EasySpecificationValidator.Validator;
 
 namespace EasySpecificationValidator.Tests.Samples.Validators.Person
 {
-    public class TestEntityValidatorMultipleRules : IValidator<EasySpecificationValidator.Tests.Samples.Entities.Person>
+    public class AllFirstNameRulesValidator : IValidator<Entities.Person>
     {
         #region Implementation of IValidator<in Person>
 
         /// <exception cref="ArgumentNullException">Condition.</exception>
-        public bool IsValid(EasySpecificationValidator.Tests.Samples.Entities.Person entity)
+        public bool IsValid(Entities.Person entity)
         {
             var firstNameNotEmpty = new FirstNameCannotBeNullOrWhiteSpace();
-            var greaterThan25 = new FirstNameCannotBeGreaterThanTwentyFive();
-            return firstNameNotEmpty.Or(greaterThan25.Not()).IsSatisfiedBy(entity);
+            var notGreaterThanTwentyFive = new FirstNameCannotBeGreaterThanTwentyFive();
+            return firstNameNotEmpty.Or(notGreaterThanTwentyFive).IsSatisfiedBy(entity);
         }
 
         #endregion
