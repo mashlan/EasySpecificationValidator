@@ -1,6 +1,7 @@
-using EasySpcificationValidator.Tests.Samples.Entities;
 using EasySpcificationValidator.Tests.Samples.Validators.Person;
 using EasySpecificationValidator.Specification;
+using EasySpecificationValidator.Tests.Samples.Entities;
+using EasySpecificationValidator.Tests.Samples.Validators.Person;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

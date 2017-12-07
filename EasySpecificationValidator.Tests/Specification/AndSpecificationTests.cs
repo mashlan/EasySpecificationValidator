@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
-using EasySpcificationValidator.Tests.Samples.Entities;
 using EasySpecificationValidator.Specification;
+using EasySpecificationValidator.Tests.Samples.Entities;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
