@@ -1,6 +1,6 @@
 using System;
 
-namespace EasySpcificationValidator.Tests.Samples.Entities
+namespace EasySpecificationValidator.Tests.Samples.Entities
 {
     public class Person
     {

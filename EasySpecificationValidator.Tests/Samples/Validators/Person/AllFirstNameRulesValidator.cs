@@ -2,9 +2,9 @@ using System;
 using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Validator;
 
-namespace EasySpcificationValidator.Tests.Samples.Validators.Person
+namespace EasySpecificationValidator.Tests.Samples.Validators.Person
 {
-    public class TestEntityValidatorMultipleRules : IValidator<Entities.Person>
+    public class AllFirstNameRulesValidator : IValidator<Entities.Person>
     {
         #region Implementation of IValidator<in Person>
 

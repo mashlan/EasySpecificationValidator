@@ -1,10 +1,10 @@
-using EasySpcificationValidator.Tests.Samples.Entities;
-using EasySpcificationValidator.Tests.Samples.Validators.Person;
 using EasySpecificationValidator.Specification;
+using EasySpecificationValidator.Tests.Samples.Entities;
+using EasySpecificationValidator.Tests.Samples.Validators.Person;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Samples.Tests.Validators
+namespace EasySpecificationValidator.Tests.Samples.Tests.Validators
 {
     public class FirstNameCannotBeGreaterThanTwentyFiveTestsTests
     {
@@ -36,7 +36,7 @@ namespace EasySpcificationValidator.Tests.Samples.Tests.Validators
             [TestMethod]
             public void IsInvalid()
             {
-                var entity = new Person{ FirstName = "LessThan25" };
+                var entity = new Person { FirstName = "LessThan25" };
 
                 var isValid = validator.IsSatisfiedBy(entity);
 
@@ -46,7 +46,7 @@ namespace EasySpcificationValidator.Tests.Samples.Tests.Validators
             [TestMethod]
             public void IsValid()
             {
-                var entity = new Person{ FirstName = "I am a really long first name or something that is totally passed the 25 character limit."};
+                var entity = new Person { FirstName = "I am a really long first name or something that is totally passed the 25 character limit." };
 
                 var isValid = validator.IsSatisfiedBy(entity);
 

@@ -4,7 +4,7 @@ using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Specification
+namespace EasySpecificationValidator.Tests.Specification
 {
     public class OrSpecificationTests
     {
@@ -46,6 +46,60 @@ namespace EasySpcificationValidator.Tests.Specification
 
                 ctor.ShouldThrow<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
+            }
+        }
+
+        [TestClass]
+        public class MethodsTests : BaseTest<string>
+        {
+            [TestCleanup]
+            public void TestCleanup()
+            {
+                ClearFakes();
+            }
+
+            [TestMethod]
+            public void OrLeftAndRightSideAreTrue()
+            {
+                SetLeftAndRightExpressionsResults(true, true);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy(A.Dummy<string>());
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
+            }
+
+            [TestMethod]
+            public void OrLeftIsTrueOnly()
+            {
+                SetLeftAndRightExpressionsResults(true, false);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy(A.Dummy<string>());
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Never);
+            }
+
+            [TestMethod]
+            public void OrRightIsTrueOnly()
+            {
+                SetLeftAndRightExpressionsResults(false, true);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy(A.Dummy<string>());
+                isValid.Should().BeTrue();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
+            }
+
+            [TestMethod]
+            public void OrLeftAndRightSideAreFalse()
+            {
+                SetLeftAndRightExpressionsResults(false, false);
+
+                var isValid = LeftSpecification.Or(RightSpecification).IsSatisfiedBy(A.Dummy<string>());
+                isValid.Should().BeFalse();
+
+                CheckCallTosOfLeftAndRightExpressions(Repeated.Exactly.Once, Repeated.Exactly.Once);
             }
         }
     }

@@ -1,8 +1,8 @@
-﻿using EasySpecificationValidator.Specification;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using EasySpecificationValidator.Specification;
 
-namespace EasySpcificationValidator.Tests.Samples.Validators.Person.Async
+namespace EasySpecificationValidator.Tests.Samples.Validators.Person.Async
 {
     public class MustBeAtLeast18Async : GenericSpecificationAsync<Entities.Person>
     {
