@@ -6,7 +6,9 @@
     <RootNamespace>EasySpecificationValidator</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Specification .NetStandard .NetCore RulesValidation</PackageTags>
-    <Description>Simple abstraction of Specfication pattern for .Net Standard</Description>
+    <Description>Simple abstraction of Specfication pattern for .Net Standard
+
+UPDATE: added logical orperators to verify all rules in a validator</Description>
     <Copyright>2017</Copyright>
     <Authors>Eric Mashlan,  Andre Davis</Authors>
     <PackageId>EasySpecificationValidator</PackageId>
@@ -15,7 +17,9 @@
     <PackageLicenseUrl>https://github.com/mashlan/EasySpecificationValidator/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://ih1.redbubble.net/image.436067462.0019/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg</PackageIconUrl>
     <Company>Eric Mashlan Andre Davis</Company>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
   </PropertyGroup>
 
 </Project>

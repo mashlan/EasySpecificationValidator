@@ -1,10 +1,10 @@
 ﻿using System;
-using EasySpcificationValidator.Tests.Samples.Entities;
-using EasySpcificationValidator.Tests.Samples.Validators.Person;
+using EasySpecificationValidator.Tests.Samples.Entities;
+using EasySpecificationValidator.Tests.Samples.Validators.Person;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EasySpcificationValidator.Tests.Validator
+namespace EasySpecificationValidator.Tests.Validator
 {
     [TestClass]
     public class ValidatorTests

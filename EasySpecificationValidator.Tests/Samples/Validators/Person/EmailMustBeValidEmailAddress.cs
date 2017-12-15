@@ -2,7 +2,7 @@ using System;
 using System.Net.Mail;
 using EasySpecificationValidator.Specification;
 
-namespace EasySpcificationValidator.Tests.Samples.Validators.Person
+namespace EasySpecificationValidator.Tests.Samples.Validators.Person
 {
     public class EmailMustBeValidEmailAddress: GenericSpecification<Entities.Person>
     {

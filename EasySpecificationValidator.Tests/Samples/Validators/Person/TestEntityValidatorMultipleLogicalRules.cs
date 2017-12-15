@@ -1,7 +1,7 @@
 using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Validator;
 
-namespace EasySpcificationValidator.Tests.Samples.Validators.Person
+namespace EasySpecificationValidator.Tests.Samples.Validators.Person
 {
     /// <summary>
     /// This validator will validate all rules even if first rule is invalid

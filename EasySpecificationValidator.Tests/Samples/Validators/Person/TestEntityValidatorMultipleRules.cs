@@ -4,7 +4,7 @@ using EasySpecificationValidator.Validator;
 
 namespace EasySpecificationValidator.Tests.Samples.Validators.Person
 {
-    public class AllFirstNameRulesValidator : IValidator<Entities.Person>
+    public class TestEntityValidatorMultipleRules : IValidator<Entities.Person>
     {
         #region Implementation of IValidator<in Person>
 
