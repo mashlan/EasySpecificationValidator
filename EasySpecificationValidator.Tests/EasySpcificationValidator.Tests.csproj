@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validator\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EasySpecificationValidator\EasySpecificationValidator.csproj" />
   </ItemGroup>
 

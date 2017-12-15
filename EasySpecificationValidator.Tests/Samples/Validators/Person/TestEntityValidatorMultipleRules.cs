@@ -12,8 +12,12 @@ namespace EasySpcificationValidator.Tests.Samples.Validators.Person
         public bool IsValid(Entities.Person entity)
         {
             var firstNameNotEmpty = new FirstNameCannotBeNullOrWhiteSpace();
-            var greaterThan25 = new FirstNameCannotBeGreaterThanTwentyFive();
-            return firstNameNotEmpty.Or(greaterThan25.Not()).IsSatisfiedBy(entity);
+            var notGreaterThan25 = new FirstNameCannotBeGreaterThanTwentyFive();
+            var ageOver21 = new AgeMustBeOverTwentityOneOrOver();
+            return ageOver21
+                .And(firstNameNotEmpty
+                    .And(notGreaterThan25))
+                .IsSatisfiedBy(entity);
         }
 
         #endregion
