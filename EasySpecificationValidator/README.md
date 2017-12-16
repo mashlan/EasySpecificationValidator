@@ -29,13 +29,13 @@ public class MustBeAtLeast18Async : GenericSpecificationAsync<Person>
     };
 }
 
-public class MustNotBeBornInSeptember : GenericSpecificationAsync<Person>
+public class MustNotBeBornInSeptemberAsync : GenericSpecificationAsync<Entities.Person>
 {
-    public override Fucn<Person, Task<bool>> Rule => person => 
+    public override Func<Entities.Person, Task<bool>> Rule => person =>
     {
-        Task.Deplay(2000); //Pretend async delay.
+        Task.Delay(2000); //Pretend async delay.
         return Task.FromResult(person.BirthDate.Month != 9);
-    }
+    };
 }
 ```
 
