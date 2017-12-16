@@ -2,7 +2,6 @@
 using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Tests.Samples.Entities;
 using EasySpecificationValidator.Tests.Samples.Specifications.Person.Async;
-using EasySpecificationValidator.Tests.Samples.Validators.Person.Async;
 using EasySpecificationValidator.Validator;
 
 namespace EasySpecificationValidator.Tests.Samples.Validator

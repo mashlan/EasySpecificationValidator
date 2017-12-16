@@ -2,7 +2,7 @@ using System;
 using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Validator;
 
-namespace EasySpecificationValidator.Tests.Samples.Validators.Person
+namespace EasySpecificationValidator.Tests.Samples.Specifications.Person
 {
     public class TestEntityValidatorMultipleRules : IValidator<Entities.Person>
     {

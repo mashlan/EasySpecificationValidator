@@ -1,7 +1,7 @@
 using System;
 using EasySpecificationValidator.Specification;
 
-namespace EasySpecificationValidator.Tests.Samples.Validators.Person
+namespace EasySpecificationValidator.Tests.Samples.Specifications.Person
 {
     public class FirstNameCannotBeGreaterThanTwentyFive : GenericSpecification<Entities.Person>
     {

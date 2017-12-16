@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using EasySpecificationValidator.Specification;
 
-namespace EasySpecificationValidator.Tests.Samples.Validators.Person.Async
+namespace EasySpecificationValidator.Tests.Samples.Specifications.Person.Async
 {
     public class MustBeAtLeast18Async : GenericSpecificationAsync<Entities.Person>
     {
