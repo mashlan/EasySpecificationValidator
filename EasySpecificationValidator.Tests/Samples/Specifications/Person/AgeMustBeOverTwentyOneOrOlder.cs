@@ -3,7 +3,7 @@ using EasySpecificationValidator.Specification;
 
 namespace EasySpecificationValidator.Tests.Samples.Specifications.Person
 {
-    public class AgeMustBeOverTwentityOneOrOver : GenericSpecification<Entities.Person>
+    public class AgeMustBeOverTwentyOneOrOlder : GenericSpecification<Entities.Person>
     {
         #region Overrides of GenericSpecification<Person>
 

@@ -13,7 +13,7 @@ namespace EasySpecificationValidator.Tests.Samples.Specifications.Person
         {
             var firstNameNotEmpty = new FirstNameCannotBeNullOrWhiteSpace();
             var notGreaterThan25 = new FirstNameCannotBeGreaterThanTwentyFive();
-            var ageOver21 = new AgeMustBeOverTwentityOneOrOver();
+            var ageOver21 = new AgeMustBeOverTwentyOneOrOlder();
             return ageOver21
                 .And(firstNameNotEmpty
                     .And(notGreaterThan25))

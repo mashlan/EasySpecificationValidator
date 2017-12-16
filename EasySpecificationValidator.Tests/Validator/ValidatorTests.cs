@@ -13,7 +13,7 @@ namespace EasySpecificationValidator.Tests.Validator
         private TestEntityValidatorMultipleLogicalRules logicalValidator;
 
         [TestInitialize]
-        public void Init()
+        public void TestInitialize()
         {
             validator = new TestEntityValidatorMultipleRules();
             logicalValidator = new TestEntityValidatorMultipleLogicalRules();
@@ -93,7 +93,7 @@ namespace EasySpecificationValidator.Tests.Validator
             {
                 Age = age ?? 21,
                 BirthDate = birthDate ?? DateTime.Now.AddYears(-21),
-                Email = email ?? "test.user@test.com",
+                Email = email ?? "test.user@yop.com",
                 FirstName = firstName ?? "Test",
                 LastName = lastName ?? "User"
             };
