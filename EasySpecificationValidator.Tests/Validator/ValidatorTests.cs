@@ -93,7 +93,7 @@ namespace EasySpecificationValidator.Tests.Validator
             {
                 Age = age ?? 21,
                 BirthDate = birthDate ?? DateTime.Now.AddYears(-21),
-                Email = email ?? "test.user@yop.com",
+                Email = email ?? "test.user@yopmail.com",
                 FirstName = firstName ?? "Test",
                 LastName = lastName ?? "User"
             };
