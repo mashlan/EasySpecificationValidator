@@ -36,7 +36,7 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new OrSpecificationAsync<int>(null, fakeSpecification);
 
-                ctor.ShouldThrow<ArgumentNullException>()
+                ctor.Should().Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
             }
 
@@ -45,7 +45,7 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new OrSpecificationAsync<int>(fakeSpecification, null);
 
-                ctor.ShouldThrow<ArgumentNullException>()
+                ctor.Should().Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
             }
         }
