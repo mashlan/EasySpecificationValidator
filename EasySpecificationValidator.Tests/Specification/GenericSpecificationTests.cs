@@ -10,15 +10,23 @@ namespace EasySpecificationValidator.Tests.Specification
         [TestClass]
         public class ConstructorTests
         {
-            [TestMethod]
-            public void Inheritence()
-            {
-                var genericSpecification = new MockGenericSpecification();
+            private readonly MockGenericSpecification genericSpecification;
 
-                genericSpecification.Should().NotBeNull();
+            public ConstructorTests()
+            {
+                genericSpecification = new MockGenericSpecification();
+            }
+
+            [TestMethod]
+            public void InheritsFromISpecification()
+            {
                 genericSpecification.Should().BeAssignableTo<ISpecification<string>>();
+            }
+
+            [TestMethod]
+            public void InheritsFromGenericSpecification()
+            {
                 genericSpecification.Should().BeAssignableTo<GenericSpecification<string>>();
-                genericSpecification.Should().BeOfType<MockGenericSpecification>();
             }
         }
 

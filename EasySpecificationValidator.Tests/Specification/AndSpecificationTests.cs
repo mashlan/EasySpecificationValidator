@@ -13,21 +13,23 @@ namespace EasySpecificationValidator.Tests.Specification
         public class ConstructorTests
         {
             private readonly ISpecification<int> fakeSpecification;
+            private readonly AndSpecification<int> specification;
 
             public ConstructorTests()
             {
                 fakeSpecification = A.Fake<ISpecification<int>>();
+                specification = new AndSpecification<int>(fakeSpecification, fakeSpecification);
             }
 
             [TestMethod]
-            public void Inheritence()
+            public void InheritsFromISpecification()
             {
-                var specification = new AndSpecification<int>(fakeSpecification, fakeSpecification);
-
-                specification.Should().NotBeNull();
                 specification.Should().BeAssignableTo<ISpecification<int>>();
-                specification.Should().BeOfType<AndSpecification<int>>();
+            }
 
+            [TestMethod]
+            public void RuleShouldBeNull()
+            {
                 specification.Rule.Should().BeNull();
             }
 
@@ -36,7 +38,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new AndSpecification<int>(null, fakeSpecification);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
             }
 
@@ -45,7 +48,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new AndSpecification<int>(fakeSpecification, null);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
             }
         }

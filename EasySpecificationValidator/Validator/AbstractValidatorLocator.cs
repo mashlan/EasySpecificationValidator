@@ -6,6 +6,7 @@ namespace EasySpecificationValidator.Validator
     {
         protected readonly IServiceProvider ServiceProvider;
 
+        /// <inheritdoc />
         protected AbstractValidatorLocator(IServiceProvider serviceProvider)
         {
             ServiceProvider = serviceProvider;

@@ -13,21 +13,23 @@ namespace EasySpecificationValidator.Tests.Specification
         public class ConstructorTests
         {
             private readonly ISpecificationAsync<int> fakeSpecificationAsync;
+            private readonly AndSpecificationAsync<int> specification;
 
             public ConstructorTests()
             {
                 fakeSpecificationAsync = A.Fake<ISpecificationAsync<int>>();
+                specification = new AndSpecificationAsync<int>(fakeSpecificationAsync, fakeSpecificationAsync);
             }
 
             [TestMethod]
-            public void Inheritence()
+            public void InheritsFromISpecificationAsync()
             {
-                var specification = new AndSpecificationAsync<int>(fakeSpecificationAsync, fakeSpecificationAsync);
-
-                specification.Should().NotBeNull();
                 specification.Should().BeAssignableTo<ISpecificationAsync<int>>();
-                specification.Should().BeOfType<AndSpecificationAsync<int>>();
+            }
 
+            [TestMethod]
+            public void RuleShouldBeNull()
+            {
                 specification.Rule.Should().BeNull();
             }
 
@@ -36,7 +38,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new AndSpecificationAsync<int>(null, fakeSpecificationAsync);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
             }
 
@@ -45,7 +48,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new AndSpecificationAsync<int>(fakeSpecificationAsync, null);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
             }
         }

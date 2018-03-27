@@ -4,11 +4,13 @@ using System.Threading.Tasks;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public abstract class SpecificationBaseAsync<TEntity> : ISpecificationAsync<TEntity>
     {
         protected ISpecificationAsync<TEntity> LeftSpecification { get; }
         protected ISpecificationAsync<TEntity> RightSpecification { get; }
 
+        /// <inheritdoc />
         protected SpecificationBaseAsync(ISpecificationAsync<TEntity> left, ISpecificationAsync<TEntity> right)
         {
             LeftSpecification = left ?? throw new ArgumentNullException(nameof(left));

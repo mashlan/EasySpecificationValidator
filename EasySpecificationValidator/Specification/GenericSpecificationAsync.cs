@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public abstract class GenericSpecificationAsync<TEntity> : ISpecificationAsync<TEntity>
     {
         public abstract Func<TEntity, Task<bool>> Rule { get; }

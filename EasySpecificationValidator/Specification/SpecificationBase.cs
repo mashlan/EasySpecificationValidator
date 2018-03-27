@@ -3,11 +3,13 @@ using System.Linq.Expressions;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public abstract class SpecificationBase<TEntity> : ISpecification<TEntity>
     {
         protected ISpecification<TEntity> LeftSpecification { get; }
         protected ISpecification<TEntity> RightSpecification { get; }
 
+        /// <inheritdoc />
         protected SpecificationBase(ISpecification<TEntity> left, ISpecification<TEntity> right)
         {
             LeftSpecification = left ?? throw new ArgumentNullException(nameof(left));

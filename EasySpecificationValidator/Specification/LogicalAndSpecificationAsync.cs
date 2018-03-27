@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public class LogicalAndSpecificationAsync<TEntity> : SpecificationBaseAsync<TEntity>
     {
         /// <inheritdoc />

@@ -12,21 +12,23 @@ namespace EasySpecificationValidator.Tests.Specification
         public class ConstructorTests
         {
             private readonly ISpecification<int> fakeSpecification;
+            private readonly OrSpecification<int> specification;
 
             public ConstructorTests()
             {
                 fakeSpecification = A.Fake<ISpecification<int>>();
+                specification = new OrSpecification<int>(fakeSpecification, fakeSpecification);
             }
 
             [TestMethod]
-            public void Inheritence()
+            public void InheritsFromISpecification()
             {
-                var specification = new OrSpecification<int>(fakeSpecification, fakeSpecification);
-
-                specification.Should().NotBeNull();
                 specification.Should().BeAssignableTo<ISpecification<int>>();
-                specification.Should().BeOfType<OrSpecification<int>>();
+            }
 
+            [TestMethod]
+            public void RuleShouldBeNull()
+            {
                 specification.Rule.Should().BeNull();
             }
 

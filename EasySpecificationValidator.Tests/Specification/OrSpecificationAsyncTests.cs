@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using EasySpecificationValidator.Specification;
 using FakeItEasy;
@@ -13,22 +14,24 @@ namespace EasySpecificationValidator.Tests.Specification
         public class ConstructorTests
         {
             private readonly ISpecificationAsync<int> fakeSpecification;
+            private readonly OrSpecificationAsync<int> specificationAsync;
 
             public ConstructorTests()
             {
                 fakeSpecification = A.Fake<ISpecificationAsync<int>>();
+                specificationAsync = new OrSpecificationAsync<int>(fakeSpecification, fakeSpecification);
             }
 
             [TestMethod]
-            public void Inheritence()
+            public void InheritsFromISpecificationAsync()
             {
-                var specification = new OrSpecificationAsync<int>(fakeSpecification, fakeSpecification);
+                specificationAsync.Should().BeAssignableTo<ISpecificationAsync<int>>();
+            }
 
-                specification.Should().NotBeNull();
-                specification.Should().BeAssignableTo<ISpecificationAsync<int>>();
-                specification.Should().BeOfType<OrSpecificationAsync<int>>();
-
-                specification.Rule.Should().BeNull();
+            [TestMethod]
+            public void RuleShouldBeNull()
+            {
+                specificationAsync.Rule.Should().BeNull();
             }
 
             [TestMethod]
@@ -36,7 +39,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new OrSpecificationAsync<int>(null, fakeSpecification);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
             }
 
@@ -45,7 +49,8 @@ namespace EasySpecificationValidator.Tests.Specification
             {
                 Action ctor = () => new OrSpecificationAsync<int>(fakeSpecification, null);
 
-                ctor.Should().Throw<ArgumentNullException>()
+                ctor.Should()
+                    .Throw<ArgumentNullException>()
                     .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
             }
         }

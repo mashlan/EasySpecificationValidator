@@ -2,6 +2,7 @@ using System;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public abstract class GenericSpecification<TEntity> : ISpecification<TEntity>
     {
         public abstract Func<TEntity, bool> Rule { get; }

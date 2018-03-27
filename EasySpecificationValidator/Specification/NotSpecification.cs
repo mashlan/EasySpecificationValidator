@@ -2,6 +2,7 @@ using System;
 
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public class NotSpecification<TEntity> : ISpecification<TEntity>
     {
         private ISpecification<TEntity> Wrapped { get; }
@@ -13,7 +14,8 @@ namespace EasySpecificationValidator.Specification
         {
             Wrapped = self ?? throw new ArgumentNullException(nameof(self));
         }
-        
+
+        /// <inheritdoc />
         public bool IsSatisfiedBy(TEntity candidate)
         {
             return !Wrapped.IsSatisfiedBy(candidate);

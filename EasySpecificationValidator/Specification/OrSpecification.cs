@@ -1,7 +1,6 @@
-using System;
-
 namespace EasySpecificationValidator.Specification
 {
+    /// <inheritdoc />
     public class OrSpecification<TEntity> : SpecificationBase<TEntity>
     {
         /// <inheritdoc />
