@@ -15,7 +15,7 @@ namespace EasySpecificationValidator.Specification
         public static ISpecification<TEntity> LogicalAnd<TEntity>(this ISpecification<TEntity> self,
             ISpecification<TEntity> logicalAndSpecification)
         {
-            return new LogicalAndSpcification<TEntity>(self, logicalAndSpecification);
+            return new LogicalAndSpecification<TEntity>(self, logicalAndSpecification);
         }
 
         /// <exception cref="ArgumentNullException">Condition.</exception>

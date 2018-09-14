@@ -1,10 +1,10 @@
 namespace EasySpecificationValidator.Specification
 {
     /// <inheritdoc />
-    public class LogicalAndSpcification<TEntity> : SpecificationBase<TEntity>
+    public class LogicalAndSpecification<TEntity> : SpecificationBase<TEntity>
     {
         /// <inheritdoc />
-        public LogicalAndSpcification(ISpecification<TEntity> left, ISpecification<TEntity> right) 
+        public LogicalAndSpecification(ISpecification<TEntity> left, ISpecification<TEntity> right)
             : base(left, right) { }
 
         /// <inheritdoc />
@@ -12,6 +12,6 @@ namespace EasySpecificationValidator.Specification
         {
             return LeftSpecification.IsSatisfiedBy(candidate) & RightSpecification.IsSatisfiedBy(candidate);
         }
-        
+
     }
 }

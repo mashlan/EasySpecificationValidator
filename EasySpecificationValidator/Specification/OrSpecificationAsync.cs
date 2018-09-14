@@ -6,7 +6,8 @@ namespace EasySpecificationValidator.Specification
     /// <inheritdoc />
     public class OrSpecificationAsync<TEntity> : SpecificationBaseAsync<TEntity>
     {
-        /// <exception cref="ArgumentNullException">Condition.</exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException">Condition.</exception>
         public OrSpecificationAsync(ISpecificationAsync<TEntity> left, ISpecificationAsync<TEntity> right)
             :base(left, right) { }
 
