@@ -17,7 +17,7 @@ UPDATE: added logical orperators to verify all rules in a validator</Description
     <PackageLicenseUrl>https://github.com/mashlan/EasySpecificationValidator/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://ih1.redbubble.net/image.436067462.0019/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg</PackageIconUrl>
     <Company>Eric Mashlan Andre Davis</Company>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <AssemblyVersion>1.0.6.0</AssemblyVersion>
     <FileVersion>1.0.6.0</FileVersion>
     <RepositoryUrl>https://github.com/mashlan/EasySpecificationValidator</RepositoryUrl>
