@@ -1,8 +1,8 @@
-﻿using System;
-using EasySpecificationValidator.Tests.Samples.Entities;
+﻿using EasySpecificationValidator.Tests.Samples.Entities;
 using EasySpecificationValidator.Tests.Samples.Specifications.Person;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace EasySpecificationValidator.Tests.Validator
 {
@@ -57,7 +57,7 @@ namespace EasySpecificationValidator.Tests.Validator
             // The difference between this test and the one below is that all rules are checked.
             var person = GetTestPerson(
                 age: 12,
-                firstName: string.Empty, 
+                firstName: string.Empty,
                 lastName: "valid",
                 birthDate: DateTime.Now.AddYears(-10));
 
@@ -66,7 +66,7 @@ namespace EasySpecificationValidator.Tests.Validator
         }
 
         [TestMethod]
-        public void PersonShouldHaveSingleeErrorCheck()
+        public void PersonShouldHaveSingleErrorCheck()
         {
             //This will fail on the first rule
             var person = GetTestPerson(
@@ -84,7 +84,7 @@ namespace EasySpecificationValidator.Tests.Validator
         /// </summary>
         private static Person GetTestPerson(
             int? age = null,
-            DateTime? birthDate = null, 
+            DateTime? birthDate = null,
             string email = null,
             string firstName = null,
             string lastName = null)

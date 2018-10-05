@@ -40,7 +40,7 @@ namespace EasySpecificationValidator.Tests.Specification
 
                 ctor.Should()
                     .Throw<ArgumentNullException>()
-                    .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
+                    .WithMessage(ExceptionUtilities.ArgumentNullExceptionMessage("left"));
             }
 
             [TestMethod]
@@ -50,7 +50,7 @@ namespace EasySpecificationValidator.Tests.Specification
 
                 ctor.Should()
                     .Throw<ArgumentNullException>()
-                    .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
+                    .WithMessage(ExceptionUtilities.ArgumentNullExceptionMessage("right"));
             }
         }
 

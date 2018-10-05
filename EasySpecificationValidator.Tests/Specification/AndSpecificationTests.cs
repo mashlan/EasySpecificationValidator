@@ -1,9 +1,9 @@
-﻿using System;
-using EasySpecificationValidator.Specification;
+﻿using EasySpecificationValidator.Specification;
 using EasySpecificationValidator.Tests.Samples.Entities;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace EasySpecificationValidator.Tests.Specification
 {
@@ -40,7 +40,7 @@ namespace EasySpecificationValidator.Tests.Specification
 
                 ctor.Should()
                     .Throw<ArgumentNullException>()
-                    .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: left");
+                    .WithMessage(ExceptionUtilities.ArgumentNullExceptionMessage("left"));
             }
 
             [TestMethod]
@@ -50,7 +50,7 @@ namespace EasySpecificationValidator.Tests.Specification
 
                 ctor.Should()
                     .Throw<ArgumentNullException>()
-                    .WithMessage($"Value cannot be null.{Environment.NewLine}Parameter name: right");
+                    .WithMessage(ExceptionUtilities.ArgumentNullExceptionMessage("right"));
             }
         }
 
